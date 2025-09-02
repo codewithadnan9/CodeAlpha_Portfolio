@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(0, 0, 23);
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgb(0, 0, 80);
+            position: relative;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            padding: 0 20px;
+        }
+
+        .left {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: rgb(157, 157, 247);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background-color: rgb(0, 0, 80);
+            position: absolute;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .firstsection {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            gap: 40px;
+        }
+
+        .leftsection {
+            flex: 1 1 350px;
+            max-width: 500px;
+            font-size: 2rem;
+        }
+
+        .leftsection .buttons {
+            margin-top: 30px;
+        }
+
+        .leftsection .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 10px 10px 0 0;
+            color: white;
+            background-color: rgb(0, 0, 80);
+            border: 2px solid white;
+            border-radius: 19px;
+            font-size: 16px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .leftsection .btn:hover {
+            background-color: white;
+            color: rgb(0, 0, 80);
+        }
+
+        .rightsection {
+            flex: 1 1 300px;
+            max-width: 500px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .rightsection img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .purple {
+            color: rgb(128, 0, 128);
+        }
+
+        main hr {
+            border: 0;
+            background: rgb(255, 255, 255);
+            height: 1.2px;
+            margin: 60px auto;
+            width: 90%;
+        }
+
+        .project-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .project-section h2 {
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .project-section span {
+            display: block;
+            margin-bottom: 20px;
+            color: gray;
+            font-size: 1rem;
+        }
+
+        .project-section p {
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        .project-section img {
+            width: 90%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: rgb(0, 0, 80);
+            color: white;
+            margin-top: 40px;
+        }
+
+        .footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 30px 20px;
+            gap: 30px;
+        }
+
+        .footer div {
+            flex: 1 1 150px;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li {
+            margin: 5px 0;
+        }
+
+        .footer-rights {
+            text-align: center;
+            background-color: rgb(7, 7, 50);
+            padding: 15px 10px;
+            font-size: 0.9rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .left {
+                font-size: 1.2rem;
+            }
+
+            .leftsection {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .leftsection {
+                font-size: 1.5rem;
+            }
+
+            .leftsection .btn {
+                font-size: 14px;
+                padding: 10px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Adnan's Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="mobile-menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="firstsection">
+            <div class="leftsection">
+                Hi, My name is <span class="purple">Adnan</span>
+                <div>and I am a passionate</div>
+                <span id="element" class="purple"></span>
+                <div class="buttons">
+                    <a href="ADNAN RESUME.pdf" target="_blank" rel="noopener" class="btn">Download Resume</a>
+                    <a href="https://github.com/codewithadnan9" target="_blank" rel="noopener" class="btn">Visit
+                        Github</a>
+                </div>
+            </div>
+            <div class="rightsection">
+                <img src="bg.png" alt="Portfolio Image">
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="project-section">
+            <h2>First Project</h2>
+            <span>IMAGE GALLERY</span>
+            <p>A modern, responsive image gallery with smooth transitions, hover effects, and lightbox functionality for
+                an enhanced viewing experience. Supports categories and filters for better organization.</p>
+            <img src="Screenshot 2025-08-26 115101.png" alt="Gallery Screenshot">
+            <img src="Screenshot 2025-08-26 115628.png" alt="Gallery Screenshot">
+        </section>
+
+        <hr>
+
+        <section class="project-section">
+            <h2>Second Project</h2>
+            <span>CALCULATOR</span>
+            <p>A simple and responsive calculator built with HTML, CSS, and JavaScript. It performs basic arithmetic
+                operations and features a clean interface for seamless use on any device.</p>
+            <img src="Calculator 1.png" alt="Calculator Screenshot">
+            <img src="Calculator 2.png" alt="Calculator Screenshot">
+        </section>
+        <hr>
+        <section class="project-section">
+            <h2>Contact Details </h2>
+            <span>Get In Touch</span>
+            <p>You Can Reach Me Via Following Methods </p>
+            <ul style="list-style:none; padding:0; max-width: 400px; margin: 0 auto; color: #ccc; font-size: 1rem;">
+        <li><strong>Email:</strong> <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" style="color: rgb(157, 157, 247); text-decoration:none;">codewithadnan9@gmail.com</a></li>
+        <li><strong>Phone:</strong> <a href="tel:+917456861279" style="color: rgb(157, 157, 247); text-decoration:none;">+917456861279</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohammad-adnan-753937225/" target="_blank" rel="noopener" style="color: rgb(157, 157, 247); text-decoration:none;">linkedin.com/in/adnan</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/codewithadnan9" target="_blank" rel="noopener" style="color: rgb(157, 157, 247); text-decoration:none;">github.com/codewithadnan9</a></li>
+    </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div>
+                <h3>Adnan's Portfolio</h3>
+            </div>
+            <div>
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>Login</li>
+                    <li>Privacy</li>
+                    <li>Terms</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-rights">
+            &copy; 2025 Adnansportfolio.com | All rights reserved
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['student', ' and web developer.'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true
+        });
+
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
